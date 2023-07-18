@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Where can I study today?</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 80%;
+    }
+
+    td {
+      border: 1px solid #000;
+      padding: 6px;
+      text-align: center;
+      background-color: rgb(255, 255, 255);
+    }
+    img {
+      width: 1000px; /* Set the desired width */
+      height: 700px; /* Set the desired height */
+    }
+    select {
+      margin-right: 15px; /* Adjust the value to control the spacing */
+    }
+    body {
+      background-color: rgb(255,228, 200);
+   }
+    .grayed-out {
+      color: #999;
+    }
+    .non-bold {
+      font-weight: normal;
+    }
+  </style>
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+
+  <h1 style="color:rgb(255, 81, 0);"><i>Empty classroom finder tool (S.J.)</i></h1>
+  <h3>
+    Current Local Time: <span class='non-bold'><span class='notbold' id="current-time"></span></span>
+  </h3>
+
+  <label for="starting-time">Select starting time:</label>
+  <select id="starting-time"></select>
+
+  <label for="ending-time">Select ending time:</label>
+  <select id="ending-time"></select>
+  <button id="myButton">Search</button>
+  <h4>Available Classrooms</h4>
+  <table id="wordsTable">
+    <tbody>
+    </tbody>
+  </table>
+  <script type="module">
+    import {generateTable} from "./index.js";
+    generateTable()
+  </script>
+  <h4></h4>
+  <img src="map.jpeg" alt="map">
+</body>
+</html>
