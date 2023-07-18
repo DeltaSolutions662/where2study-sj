@@ -1,27 +1,25 @@
-//import week from "./week.json" assert { type: 'json' };;
-const jsonFile = 'week.json';
+let week;
+var wordsArray=["N/A"];
 
-// Function to read the JSON file
-function readJSONFile(file) {
-  return fetch(file)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .catch(error => {
-      console.error('Error reading JSON file:', error);
-    });
-}
+async function fetchData() {
+    try {
+      const response = await fetch('week.json'); // Replace 'data.json' with the actual path to your JSON file
+      const jsonData = await response.json();
+      // Do something with jsonData
+      week = jsonData;
+      //console.log(week)
+      wordsArray = week[currentDay][timeBlocks[starting_time_dropdown.selectedIndex]]
+      searchFunction()
+    } catch (error) {
+      console.error('Error fetching or parsing JSON data:', error);
+    }
+  }
+  
+  // Call the function to fetch data
+  fetchData();
 
-// Usage example
-readJSONFile(jsonFile)
-  .then(data => {
-    var week = data;
-    // Use the JSON data here as needed
-  });
 let defaultTimeIndex;
+
 
 const currentDate = new Date();
 const currentTime = String(currentDate.getHours())+":"+String(currentDate.getMinutes());
@@ -165,9 +163,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-var wordsArray = week[currentDay][timeBlocks[starting_time_dropdown.selectedIndex]];
+
 
 export function generateTable() {
+    
     const table = document.querySelector("#wordsTable");
     const chunkSize = 15; // Number of words per row
 
@@ -193,3 +192,4 @@ function updateTableWithNewWords(newWordsArray) {
     generateTable();
 }
 
+//week[currentDay][timeBlocks[starting_time_dropdown.selectedIndex]]
