@@ -1,4 +1,26 @@
-import week from "./week.json" assert { type: 'json' };;
+//import week from "./week.json" assert { type: 'json' };;
+const jsonFile = 'week.json';
+
+// Function to read the JSON file
+function readJSONFile(file) {
+  return fetch(file)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .catch(error => {
+      console.error('Error reading JSON file:', error);
+    });
+}
+
+// Usage example
+readJSONFile(jsonFile)
+  .then(data => {
+    var week = data;
+    // Use the JSON data here as needed
+  });
 let defaultTimeIndex;
 
 const currentDate = new Date();
