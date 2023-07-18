@@ -90,10 +90,10 @@ timeBlocksSpecial.forEach(function(time, index) {
   var option = document.createElement("option");
   option.text = time;
   if (index > 0) {
-    if (timeBlocksEnabled[index-1] === false){
+    /*if (timeBlocksEnabled[index-1] === false){
       option.disabled = true;
       option.className = "blur";
-      }}
+      }}*/
   ending_time_dropdown.add(option);
 });
 
