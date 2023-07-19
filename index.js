@@ -99,10 +99,10 @@ timeBlocks.forEach(function(time, index) {
     var option = document.createElement("option");
     option.text = time;
 
-    if (timeBlocksEnabled[index] === false){
-        option.disabled = true;
-        option.className = "blur";
-    }
+    /*if (timeBlocksEnabled[index] === false){
+        //option.disabled = true;
+        //option.className = "blur";
+    }*/
     starting_time_dropdown.add(option);
 });
 
