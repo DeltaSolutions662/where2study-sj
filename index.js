@@ -30,26 +30,26 @@ let starting_time_dropdown = document.getElementById("starting-time");
 let ending_time_dropdown = document.getElementById("ending-time")
 
 const timeBlocks = [
-    "08:30",
-    "10:00",
-    "11:30",
-    "14:00",
-    "15:30",
-    "17:00",
-    "18:30",
-    "20:00"
+    "08:20",
+    "09:40",
+    "11:00",
+    "12:20",
+    "14:50",
+    "16:10",
+    "17:30",
+    "18:50"
 ];
 
 const timeBlocksSpecial = [
     "Auto",
-    "08:30",
-    "10:00",
-    "11:30",
-    "14:00",
-    "15:30",
-    "17:00",
-    "18:30",
-    "20:00"
+    "08:20",
+    "09:40",
+    "11:00",
+    "12:20",
+    "14:50",
+    "16:10",
+    "17:30",
+    "18:50"
 ];
 
 let timeBlocksEnabled = [
