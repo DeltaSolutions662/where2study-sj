@@ -63,7 +63,7 @@ let timeBlocksEnabled = [
     true
 ];
 
-if (currentTime >= "08:30"){
+if (currentTime >= "08:20"){
     for (let i = 0; i < timeBlocks.length; i++){
         if (currentTime <= timeBlocks[i]){
             /*if (parseInt(currentTime.slice(3,5))+10 > parseInt(timeBlocks[i].slice(3,5)) && parseInt(currentTime.slice(0,2))===parseInt(timeBlocks[i].slice(0,2))) {
